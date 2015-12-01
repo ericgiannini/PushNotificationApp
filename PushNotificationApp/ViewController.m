@@ -31,7 +31,13 @@
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
     localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:secondsInTheFuture];
-    localNotification.timeZone = nil; 
+    localNotification.timeZone = nil;
+    
+    localNotification.alertTitle = @"Alert Title";
+    localNotification.alertBody = @"Alert Body";
+    localNotification.alertAction = @"Okay";
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 4; 
     
 }
 
