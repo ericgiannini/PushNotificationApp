@@ -31,6 +31,7 @@
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
     localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:secondsInTheFuture];
+    localNotification.timeZone = nil; 
     
 }
 
