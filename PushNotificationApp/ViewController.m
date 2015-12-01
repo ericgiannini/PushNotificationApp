@@ -37,7 +37,10 @@
     localNotification.alertBody = @"Alert Body";
     localNotification.alertAction = @"Okay";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.applicationIconBadgeNumber = 4; 
+    localNotification.applicationIconBadgeNumber = 4;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     
 }
 
