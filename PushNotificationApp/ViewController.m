@@ -50,9 +50,10 @@
     responsiveCategory.identifier = @"MAIN_CATEGORY";
     [responsiveCategory setActions:@[backgroundAction, foregroundAction] forContext:UIUserNotificationActionContextDefault];
     
+    NSSet *categories = [NSSet setWithObjects:responsiveCategory, nil];
     
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:responsiveCategory];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
