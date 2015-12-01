@@ -19,6 +19,12 @@
 
 @implementation ViewController
 
+- (IBAction)scheduleNotification:(id)sender {
+    
+    [self requestPermissionToNotify];
+    [self createNotification:5];
+    
+}
 
 - (void)requestPermissionToNotify {
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
