@@ -46,6 +46,9 @@
     foregroundAction.authenticationRequired = NO;
     
     
+    UIMutableUserNotificationCategory *responsiveCategory = [[UIMutableUserNotificationCategory alloc] init];
+    responsiveCategory.identifier = @"MAIN_CATEGORY";
+    [responsiveCategory setActions:@[backgroundAction, foregroundAction] forContext:UIUserNotificationActionContextDefault];
     
     
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
