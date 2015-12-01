@@ -28,13 +28,23 @@
 
 - (void)requestPermissionToNotify {
     
-    UIMutableUserNotificationAction *notificationAction = [[UIMutableUserNotificationAction alloc] init];
+    UIMutableUserNotificationAction *backgroundAction = [[UIMutableUserNotificationAction alloc] init];
     
-    notificationAction.identifier = @"FLOAT_ACTION";
-    notificationAction.title = @"Float";
-    notificationAction.activationMode = UIUserNotificationActivationModeBackground;
-    notificationAction.destructive = YES;
-    notificationAction.authenticationRequired = NO;
+    backgroundAction.identifier = @"BACKGROUND_ACTION";
+    backgroundAction.title = @"Background";
+    backgroundAction.activationMode = UIUserNotificationActivationModeBackground;
+    backgroundAction.destructive = YES;
+    backgroundAction.authenticationRequired = NO;
+    
+    
+    UIMutableUserNotificationAction *foregroundAction = [[UIMutableUserNotificationAction alloc] init];
+    
+    foregroundAction.identifier = @"FOREGROUND_ACTION";
+    foregroundAction.title = @"Foreground";
+    foregroundAction.activationMode = UIUserNotificationActivationModeForeground;
+    foregroundAction.destructive = NO;
+    foregroundAction.authenticationRequired = NO;
+    
     
     
     
