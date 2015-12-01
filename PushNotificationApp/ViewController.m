@@ -12,6 +12,9 @@
 
 - (void) requestPermissionToNotify ;
 
+- (void) createNotification:(int)secondsInTheFuture;
+
+
 @end
 
 @implementation ViewController
@@ -20,7 +23,15 @@
 - (void)requestPermissionToNotify {
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings]; 
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+}
+
+- (void)createNotification:(int)secondsInTheFuture {
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    
+    localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:secondsInTheFuture];
+    
 }
 
 - (void)viewDidLoad {
