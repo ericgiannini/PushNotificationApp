@@ -52,7 +52,7 @@
     
     
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:responsiveCategory];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
