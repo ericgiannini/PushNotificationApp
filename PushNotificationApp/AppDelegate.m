@@ -17,6 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UILocalNotification *localNotification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if (localNotification) {
+        
+        UIAlertController *alertReceptionOfLocalNotification = [UIAlertController alertControllerWithTitle:@"Local Notification Received at Launch" message:localNotification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alertReceptionOfLocalNotification addAction:action];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [application.keyWindow.rootViewController presentViewController:alertReceptionOfLocalNotification animated:YES completion:nil];
+        });    }
+    
     return YES;
 }
 
