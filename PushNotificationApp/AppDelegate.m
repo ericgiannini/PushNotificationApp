@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    application.applicationIconBadgeNumber = 0;
+    
     UILocalNotification *localNotification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
     
     if (localNotification) {
@@ -31,7 +33,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [application.keyWindow.rootViewController presentViewController:alertReceptionOfLocalNotification animated:YES completion:nil];
-        });    }
+        });
+    }
     
     return YES;
 }
