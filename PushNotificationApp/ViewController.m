@@ -27,6 +27,17 @@
 }
 
 - (void)requestPermissionToNotify {
+    
+    UIMutableUserNotificationAction *notificationAction = [[UIMutableUserNotificationAction alloc] init];
+    
+    notificationAction.identifier = @"FLOAT_ACTION";
+    notificationAction.title = @"Float";
+    notificationAction.activationMode = UIUserNotificationActivationModeBackground;
+    notificationAction.destructive = YES;
+    notificationAction.authenticationRequired = NO;
+    
+    
+    
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert ;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
