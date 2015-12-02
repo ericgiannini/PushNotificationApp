@@ -24,7 +24,7 @@
     
     if (localNotification) {
         
-        UIAlertController *alertReceptionOfLocalNotification = [UIAlertController alertControllerWithTitle:@"Local Notification Received at Launch" message:localNotification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertReceptionOfLocalNotification = [UIAlertController alertControllerWithTitle:@"Received at Launch" message:localNotification.alertBody preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
         
@@ -33,15 +33,37 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [application.keyWindow.rootViewController presentViewController:alertReceptionOfLocalNotification animated:YES completion:nil];
+            
         });
     }
     
     return YES;
 }
 
+- (void) application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forLocalNotification:(nonnull UILocalNotification *)notification completionHandler:(nonnull void (^)())completionHandler {
+    
+        application.applicationIconBadgeNumber = 0;
+
+        UIAlertController *alertReceptionCategoricallyIdentifiedLocalNotification = [UIAlertController alertControllerWithTitle:@"Received at Action" message:identifier preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alertReceptionCategoricallyIdentifiedLocalNotification addAction:action];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [application.keyWindow.rootViewController presentViewController:alertReceptionCategoricallyIdentifiedLocalNotification animated:YES completion:nil];
+            
+        });
+    
+}
+
+
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
-    UIAlertController *alertReceptionOfLocalNotification = [UIAlertController alertControllerWithTitle:@"Local Notification Received at Runtime" message:notification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+    application.applicationIconBadgeNumber = 0;
+    
+    UIAlertController *alertReceptionOfLocalNotification = [UIAlertController alertControllerWithTitle:@"Received at Runtime" message:notification.alertBody preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
     
@@ -52,8 +74,12 @@
         [application.keyWindow.rootViewController presentViewController:alertReceptionOfLocalNotification animated:YES completion:nil];
     });
     
-    
+
 }
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
