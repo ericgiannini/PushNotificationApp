@@ -57,6 +57,13 @@
 //     return result;
 // }
 
+// ()___() BOOL
+// < @ @ >
+//  |   |
+//  {o_o}
+//   (|)
+
+
 
     UIMutableUserNotificationAction *foregroundAction = [[UIMutableUserNotificationAction alloc] init];
 
@@ -74,6 +81,14 @@
 //
 //     return result;
 // }
+
+// ()___() BOOL
+// < @ @ >
+//  |   |
+//  {o_o}
+//   (|)
+
+
 
 
     UIMutableUserNotificationCategory *responsiveCategory = [[UIMutableUserNotificationCategory alloc] init];
