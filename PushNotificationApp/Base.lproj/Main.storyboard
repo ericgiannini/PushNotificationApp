@@ -18,24 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqI-Cz-FEt">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <rect key="frame" x="20" y="267" width="280" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4FS-WE-LGe"/>
-                                    <constraint firstAttribute="width" constant="46" id="vPJ-v1-Juh"/>
+                                    <constraint firstAttribute="width" constant="280" id="ln2-I7-yoG"/>
+                                    <constraint firstAttribute="height" constant="34" id="t96-kq-TIh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="scheduleNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ug-qp-7xJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cqI-Cz-FEt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kNL-Qq-4At"/>
-                            <constraint firstItem="cqI-Cz-FEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pxN-Vy-3ow"/>
+                            <constraint firstItem="cqI-Cz-FEt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2lQ-iW-yZQ"/>
+                            <constraint firstItem="cqI-Cz-FEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rek-qS-4nU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="notifyBtn" destination="cqI-Cz-FEt" id="5dm-t2-5aX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181.33333333333334" y="368.72666666666669"/>
+            <point key="canvasLocation" x="181" y="368"/>
         </scene>
     </scenes>
 </document>
