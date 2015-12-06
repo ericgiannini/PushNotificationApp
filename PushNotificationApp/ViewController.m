@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [_notifyBtn setTitle:@"15 Seconds Before Alert" forState:UIControlStateNormal       ];
+    [_notifyBtn setTitle:@"15 Seconds Before Alert" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
